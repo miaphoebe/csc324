@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="hero">
+    <h1 class="hero__title">{{ .Title }}</h1>
+    {{ with .Content }}
+      <div class="hero__body prose">{{ . }}</div>
+    {{ end }}
+  </section>
+
+  <section class="section-list">
+    <ul class="competency-links">
+      {{ range site.Sections.ByWeight }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a> <span class="competency-links__count">({{ len .Pages }})</span></li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

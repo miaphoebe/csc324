@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <section class="page-intro">
+    <h1 class="page-title">{{ .Title }}</h1>
+    {{ with .Content }}
+      <div class="page-intro__body prose">{{ . }}</div>
+    {{ end }}
+  </section>
+
+  <section class="section-list">
+    <ul class="competency-links">
+      {{ range .Pages.ByWeight }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </section>
+{{ end }}

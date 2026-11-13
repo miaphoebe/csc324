@@ -1,0 +1,20 @@
+{{/* Site override: list and back-link styles for the competency pages. */}}
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+{{ with .Params.robots }}<meta name="robots" content="{{ . }}" />{{ end }}
+<title>
+  {{ if .IsHome }}
+    {{ site.Title }}
+  {{ else }}
+    {{ printf "%s | %s" .Title site.Title }}
+  {{ end }}
+</title>
+{{ partialCached "head/css.html" . }}
+{{ partialCached "head/js.html" . }}
+<style>
+  .competency-links { list-style: none; margin: 0; padding: 0; }
+  .competency-links li { padding: 0.9rem 0; border-top: 1px solid color-mix(in srgb, currentColor 14%, transparent); }
+  .competency-links a { font-size: 1.1rem; }
+  .competency-links__count { color: var(--label-tertiary); font-size: 0.9rem; }
+  .back-link { margin-top: 3rem; }
+</style>

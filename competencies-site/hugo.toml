@@ -1,0 +1,5 @@
+baseURL = "http://localhost:1313/"
+locale = "en-US"
+title = "Competencies"
+theme = "nocturnalzone-hugo-theme"
+
